@@ -1,14 +1,29 @@
 package com.bl.moodanalyzerexception;
 
 public class MoodAnalyzerMain {
-    // Constructor
-    public MoodAnalyzerMain(){
-    }
+	private String message;
 
-    public String analyseMood(String message) {
-        if (message.contains("Sad"))
-            return "SAD";
-        else
-            return "HAPPY";
-    }
+	// Constructor
+	public MoodAnalyzerMain() {
+	}
+
+	// paraMetarised constructor
+	public MoodAnalyzerMain(String message) {
+		this.message = message;
+	}
+
+	/*
+	 * Declaring analyseMood class exception Handling implentation
+	 */
+	public String analyseMood() {
+		try {
+
+			if (this.message.contains("Sad"))
+				return "SAD";
+			else
+				return "HAPPY";
+		} catch (NullPointerException e) {
+			return "HAPPY";
+		}
+	}
 }
